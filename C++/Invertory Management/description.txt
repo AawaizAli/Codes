@@ -1,0 +1,25 @@
+This code defines two classes: `Product` and `Inventory`.
+
+`Product` has private member variables `name`, `id`, `price`, and `quantity`, which represent the name, ID number, price, and quantity of a product, respectively. It has a default constructor and a constructor that takes in arguments for all four member variables. It also has getter and setter functions for each of the member variables.
+
+`Inventory` has public member variables `products`, which is a pointer to an array of `Product` objects, and `numberOfProducts`, which is the number of products in the array. `Inventory` has a default constructor that initializes `numberOfProducts` to 3 and creates three `Product` objects and adds them to the `products` array. It also has member functions to compute the total value of all products in the array, print the details of all products in the array, add a new product to the array and write it to a binary file, delete a product from the array and update the binary file, edit the details of a product in the array and update the binary file, and search for a product in the array by its ID or name and display its details.
+
+The `Inventory` class has the following methods:
+
+1. `Inventory()` - Constructor method that initializes the inventory with three default `Product` objects.
+
+2. `double getValue()` - Returns the total value of all products in the inventory. It loops through all the `Product` objects in the `products` array and calculates the total value.
+
+3. `void printProducts()` - Prints the details of all the products in the inventory. It loops through all the `Product` objects in the `products` array and prints the name, id, price, and quantity of each product.
+
+4. `void writeToFile(string filename, Product list[], int size)` - Writes the details of all the products to a binary file. It takes the name of the file to write to, an array of `Product` objects, and the size of the array as parameters.
+
+5. `void addProduct(string name, int id, double price, int quantity)` - Adds a new `Product` object to the inventory. It creates a new `Product` object using the given parameters, adds it to a new array of `Product` objects along with the existing `Product` objects, and then writes the new array to a binary file.
+
+6. `template <typename T> void deleteProduct(T id)` - Deletes a `Product` object from the inventory using the id of the `Product`. It searches for the `Product` object with the given id, removes it from the `products` array, updates the `numberOfProducts` variable, and then writes the new array to a binary file.
+
+7. `void editProduct(int id, string name, double price, int quantity)` - Updates the details of a `Product` object in the inventory. It searches for the `Product` object with the given id, and then updates its name, price, and quantity.
+
+8. `void searchById(int key)` - Searches for a `Product` object in the inventory using its id. It prints the details of the `Product` object if it is found.
+
+9. `void searchByName(string name)` - Searches for a `Product` object in the inventory using its name. It prints the details of the `Product` object if it is found.
